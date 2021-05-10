@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">CarFax</string>
+    <string name="call_dealer">CALL DEALER</string>
+    <string name="title_activity_vehicle_details">Vehicle Details</string>
+    <string name="vehicle_info">Vehicle Info</string>
+    <string name="location">Location</string>
+    <string name="exterior_color">Exterior Color</string>
+    <string name="interior_color">Interior Color</string>
+    <string name="drive_type">Drive Type</string>
+    <string name="transmission">Transmission</string>
+    <string name="body_style">Body Style</string>
+    <string name="engine">Engine</string>
+    <string name="fuel">Fuel</string>
+    <string name="no_data_error">Network/Offline listings data unavailable!</string>
+    <string name="year_make_model">%s %s %s</string>
+    <string name="city_state">%s, %s</string>
+    <string name="price_mileage">%s | %sk mi</string>
+</resources>
