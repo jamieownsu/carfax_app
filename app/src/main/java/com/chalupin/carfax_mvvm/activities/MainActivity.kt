@@ -36,13 +36,10 @@ class MainActivity : AppCompatActivity() {
             getListingData()
         }
         binding.listings.adapter = adapter
-        viewModel =
-            ViewModelProvider(
-                this,
-                MainViewModelFactory(MainRepository())
-            ).get(
-                MainViewModel::class.java
-            )
+        viewModel = ViewModelProvider(
+            this,
+            MainViewModelFactory(MainRepository())
+        ).get(MainViewModel::class.java)
         viewModel.listingList.observe(this, {
             adapter.setListingsList(it)
             viewModel.insertData(this, it)
