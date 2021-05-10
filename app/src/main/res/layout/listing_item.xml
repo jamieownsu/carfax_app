@@ -72,7 +72,7 @@
                 android:layout_marginRight="10dp"
                 android:background="#f2f2f2" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

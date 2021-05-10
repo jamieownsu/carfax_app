@@ -214,10 +214,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:background="@drawable/get_directions_button"
+            android:background="@drawable/call_dealer_button"
             android:onClick="@{(view) -> listing.callDealer(view)}"
             android:text="@string/call_dealer"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            app:backgroundTint="@null" />
 
     </LinearLayout>
 </layout>

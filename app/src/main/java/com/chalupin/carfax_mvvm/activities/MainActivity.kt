@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
             )
         viewModel.listingList.observe(this, {
             adapter.setListingsList(it.listings)
+            binding.loading = false
         })
         viewModel.errorMessage.observe(this, {
 
