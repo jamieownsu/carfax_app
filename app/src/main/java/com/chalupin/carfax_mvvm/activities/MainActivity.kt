@@ -11,9 +11,6 @@ import com.chalupin.carfax_mvvm.models.MainViewModel
 import com.chalupin.carfax_mvvm.models.MainViewModelFactory
 import com.chalupin.carfax_mvvm.repos.MainRepository
 import com.chalupin.carfax_mvvm.utilities.MainUtilities
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -36,7 +33,6 @@ class MainActivity : AppCompatActivity() {
         ).get(MainViewModel::class.java)
         viewModel.listingList.observe(this, {
             adapter.setListingsList(it)
-            viewModel.insertData(this, it)
             binding.loading = false
         })
         viewModel.errorMessage.observe(this, {
@@ -49,9 +45,7 @@ class MainActivity : AppCompatActivity() {
         if (MainUtilities.isNetworkAvailable(this))
             viewModel.getListings(this, mSwipeRefreshLayout)
         else {
-            CoroutineScope(Dispatchers.IO).launch {
-                viewModel.getListingsOffline(applicationContext, mSwipeRefreshLayout)
-            }
+            viewModel.getListingsOffline(this, mSwipeRefreshLayout)
         }
     }
 

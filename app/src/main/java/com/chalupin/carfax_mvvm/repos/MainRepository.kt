@@ -9,25 +9,25 @@ import kotlinx.coroutines.launch
 class MainRepository {
     private val webservice = Webservice.getInstance()
 
-    fun getListings() = webservice.getListings()
-
     companion object {
         var listingDatabase: ListingDatabase? = null
 
         private fun initializeDB(context: Context): ListingDatabase {
             return ListingDatabase.getDatabase(context)
         }
+    }
 
-        fun insertData(context: Context, listings: List<Listing>) {
-            listingDatabase = initializeDB(context)
-            CoroutineScope(Dispatchers.IO).launch {
-                listingDatabase!!.listingDao().insert(listings)
-            }
-        }
+    fun getListings() = webservice.getListings()
 
-        fun getData(context: Context): List<Listing> {
-            listingDatabase = initializeDB(context)
-            return listingDatabase!!.listingDao().getAll()
+    fun insertData(context: Context, listings: List<Listing>) {
+        listingDatabase = initializeDB(context)
+        CoroutineScope(Dispatchers.IO).launch {
+            listingDatabase!!.listingDao().insert(listings)
         }
+    }
+
+    fun getData(context: Context): List<Listing> {
+        listingDatabase = initializeDB(context)
+        return listingDatabase!!.listingDao().getAll()
     }
 }
