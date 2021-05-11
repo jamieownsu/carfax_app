@@ -17,7 +17,8 @@ import java.io.Serializable
 
 @Entity(tableName = "listing_table")
 data class Listing(
-    @PrimaryKey(autoGenerate = true) val uid: Int,
+    @PrimaryKey(autoGenerate = true)
+    val uid: Int,
     @Embedded(prefix = "dlr")
     val dealer: Dealer,
     val id: String,
