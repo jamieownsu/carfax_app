@@ -15,4 +15,6 @@
     <string name="year_make_model">%s %s %s</string>
     <string name="city_state">%s, %s</string>
     <string name="price_mileage">%s | %sk mi</string>
+    <string name="ok">OK</string>
+    <string name="perm_rationale">CarFax needs your permission to make phone calls</string>
 </resources>

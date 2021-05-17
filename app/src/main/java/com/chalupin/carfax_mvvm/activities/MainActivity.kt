@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity() {
         permissions: Array<String>,
         grantResults: IntArray
     ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         MainUtilities.permissionHandler(this, requestCode, grantResults)
     }
 }
