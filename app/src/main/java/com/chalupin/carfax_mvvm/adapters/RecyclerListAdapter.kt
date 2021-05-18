@@ -10,8 +10,8 @@ import com.chalupin.carfax_mvvm.databinding.ListingItemBinding
 class RecyclerListAdapter : RecyclerView.Adapter<ListingViewHolder>() {
     private var listings = mutableListOf<Listing>()
 
-    fun setListingsList(movies: List<Listing>) {
-        this.listings = movies.toMutableList()
+    fun setListingsList(listings: List<Listing>) {
+        this.listings = listings.toMutableList()
         notifyDataSetChanged()
     }
 
